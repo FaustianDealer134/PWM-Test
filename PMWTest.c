@@ -1,29 +1,29 @@
 //******************************************************************************
 // PROJETO: Teste de Modulo PWM
 //
-// Controle de Vers„o: V1.0
-// Autor: Gaiotto
-// Num | Evento | Data | ObservaÁıes
-// 1∞ | CriaÁ„o do cÛdigo| 30/08/2017| Teste de modulo PWM
+// Controle de Vers√£o: V1.0
+// Autor: Rafael
+// Num | Evento | Data | Observa√ß√µes
+// 1¬∞ | Cria√ß√£o do c√≥digo| 30/08/2018| Teste de modulo PWM
 //******************************************************************************
-//********************* ¡REA DE INCLUS√O DE BIBLIOTECAS ************************
+//********************* √ÅREA DE INCLUS√ÉO DE BIBLIOTECAS ************************
 #include <p18f4550.h> // biblioteca do microcontrolador
 #include <delays.h> //Adiciona a biblioteca de delay.
 #include <pwm.h>
 #include <timers.h>
 
-//********************* ¡REA DE DEFINES - APELIDOS *****************************
-//********************* ¡REA DE AJUSTE DOS BITS DE CONFIGURA«√O ****************
+//********************* √ÅREA DE DEFINES - APELIDOS *****************************
+//********************* √ÅREA DE AJUSTE DOS BITS DE CONFIGURA√á√ÉO ****************
 #pragma config FOSC = INTOSC_EC // Habilita o oscilador interno
 #pragma config WDT = OFF //Desabilita o Watchdog Timer (WDT).
 #pragma config PWRT = ON //Habilita o Power-up Timer (PWRT).
 #pragma config BOR = OFF //Brown-out Reset (BOR) desabilitado.
 #pragma config PBADEN = OFF //RB0,1,2,3 e 4 configurado como I/O digital.
 #pragma config LVP = OFF //Desabilita o Low Voltage Program.
-//********************* ¡REA DE VARIAVEIS GLOBAIS *****************************
+//********************* √ÅREA DE VARIAVEIS GLOBAIS *****************************
 unsigned char period = 150;//
 unsigned int duty_cycle = 0;
-//********************* ¡REA DO PROGRAMA PRINCIPAL *****************************
+//********************* √ÅREA DO PROGRAMA PRINCIPAL *****************************
 void main(void)
 {
 	unsigned int valor;
@@ -32,9 +32,9 @@ void main(void)
  	ADCON1 = 0X0f;
  	OSCCON = 0xF2; // configura oscilador interno para 8 MHz
 
- 	OpenTimer2(TIMER_INT_OFF & T2_PS_1_1 & T2_POST_1_1); // configuraÁ„o do TIMER 2
- 	OpenPWM1 (period); // configuraÁ„o do MÛdulo CCP 1 como PWM1
- 	OpenPWM2 (period); // configuraÁ„o do MÛdulo CCP 2 como PWM2
+ 	OpenTimer2(TIMER_INT_OFF & T2_PS_1_1 & T2_POST_1_1); // configura√ß√£o do TIMER 2
+ 	OpenPWM1 (period); // configura√ß√£o do M√≥dulo CCP 1 como PWM1
+ 	OpenPWM2 (period); // configura√ß√£o do M√≥dulo CCP 2 como PWM2
 
  	while (1)
  	{
